@@ -1,5 +1,12 @@
 # Unique header generation
 require './lib/unique_head.rb'
+#
+# Global variables
+set :backend_url, ENV["BACKEND_API_BASE_URL"]
+config[:backend_url]
+
+set :plausible_domain, ENV["PLAUSIBLE_DOMAIN"]
+config[:plausible_domain]
 
 # Markdown
 set :markdown_engine, :redcarpet
@@ -38,6 +45,7 @@ end
 # Github pages require relative links
 activate :relative_assets
 set :relative_links, true
+
 
 # Build Configuration
 configure :build do
